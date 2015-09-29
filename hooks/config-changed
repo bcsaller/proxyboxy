@@ -1,0 +1,10 @@
+#!/usr/bin/python3
+import os
+
+env = os.environ
+
+with open("environment.sh", "w") as fp:
+    for key, value in env.items():
+        fp.write("{}={}\n".format(key, value))
+
+start-stop-daemon -p ${CHARM_DIR}/proxy.pid -b -m -S -- python proxy,py

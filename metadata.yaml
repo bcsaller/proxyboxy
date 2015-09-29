@@ -1,0 +1,10 @@
+name: proxyboxy
+summary: A dynamic proxy charm (via dynamic endpoints)
+maintainer: juju-core
+description: |
+  Prototype of the dynamic endpoints feature. Should this land in core a proper charm should be written.
+tags:
+  - proxy
+requires:
+  admin:
+    interface: http

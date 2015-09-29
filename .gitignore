@@ -1,0 +1,8 @@
+*.pyc
+*~
+.ropeproject
+.settings
+.tox
+bin
+environment.sh
+endpoints.json

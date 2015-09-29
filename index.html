@@ -1,0 +1,21 @@
+{% extends base.html %}
+
+{% block title %}
+        <p class="splash-subhead">
+        Dynamic Proxy Configuration
+        </p>
+{% end %}
+
+
+{% block content %}
+<div class="content-wrapper">
+    <div id="proxy-box"/>
+    </div>
+    <script type="text/jsx;harmony=true">
+        React.render(
+            <ProxyBoxy/>,
+            document.getElementById('proxy-box')
+        );
+    </script>
+</div>
+{% end %}
