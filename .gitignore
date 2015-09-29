@@ -6,3 +6,4 @@
 bin
 environment.sh
 endpoints.json
+proxy.pid

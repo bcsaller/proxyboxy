@@ -1,4 +1,4 @@
 #!/bin/bash
 env > environment.sh
 open-port 8080
-start-stop-daemon -p ${CHARM_DIR}/proxy.pid -b -m -S -- python proxy,py
+start-stop-daemon --start --pidfile ${CHARM_DIR}/proxy.pid -b -m --startas "python proxy.py"
