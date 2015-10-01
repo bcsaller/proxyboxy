@@ -20,7 +20,7 @@ from json import loads, dumps
 import os
 from path import path
 import subprocess
-from charmhelpers import hookenv
+from charmhelpers.core import hookenv
 
 SAVED_ENV = {}
 
