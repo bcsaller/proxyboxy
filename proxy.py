@@ -177,7 +177,7 @@ def load_saved_env(filename="environment.sh"):
     env = {}
     for line in path(filename).lines():
         key, value = line.split("=", 1)
-        env[key] = value
+        env[key] = value.strip()
     SAVED_ENV.update(env)
 
 
