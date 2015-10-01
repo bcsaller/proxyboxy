@@ -17,7 +17,6 @@ import tornado.template
 import tornado.web
 import logging
 from json import loads, dumps
-import os
 from path import path
 import subprocess
 from charmhelpers.core import hookenv
@@ -84,7 +83,7 @@ relation-set {}
         super(JSONDBwHooks, self).save()
         # post save we need to iterate the data and update any hooks
         # if the relation already exists we should subsequently invoke the hook
-        charm_dir = os.environ.get("CHARM_DIR", "")
+        charm_dir = SAVED_ENV.get("CHARM_DIR", "")
         hookdir = path(charm_dir) / "hooks"
         # XXX: we don't prune old hook files
         for e in self:
@@ -99,10 +98,10 @@ relation-set {}
         # XXX: this fails silently and allows for failure in the case
         # of already added endpoints
             if charm_dir:
-                subprocess.check_call(['endpoint-add',
-                                       e['name'],
-                                       e['interface']],
-                                      env=SAVED_ENV)
+                subprocess.call(['endpoint-add',
+                                 e['name'],
+                                 e['interface']],
+                                env=SAVED_ENV)
                 rid = hookenv.relation_ids(e['name'])
                 if rid:
                     hookenv.relation_set(rid, e['data'])
