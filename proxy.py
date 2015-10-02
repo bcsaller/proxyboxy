@@ -75,7 +75,7 @@ class JSONDB(list):
 
 
 class JSONDBwHooks(JSONDB):
-    HOOK = """!/bin/bash
+    HOOK = """#!/bin/bash
 relation-set {}
 """
 
